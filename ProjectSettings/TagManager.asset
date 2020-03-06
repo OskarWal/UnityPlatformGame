@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Cherry
+  - Enemy
   layers:
   - Default
   - TransparentFX

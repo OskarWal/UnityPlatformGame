@@ -13,11 +13,11 @@ public class PlayerController : MonoBehaviour
     private State state = State.idle;
     private Collider2D collider;
     [SerializeField] private LayerMask ground;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpforce = 7f;
+    [SerializeField] private float speed = 7f;
+    [SerializeField] private float jumpforce = 10f;
     [SerializeField] private int cherries = 0;
     [SerializeField] private Text showCountCherry;
-    [SerializeField] private float hurtForce = 5f;
+    [SerializeField] private float hurtForce = 1f;
 
 
     // Start is called before the first frame update
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
             if(state == State.falling)
             {
                 Destroy(collision.gameObject);
+                Jump();
             }
             else
             {
@@ -93,15 +94,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
         }
-        else
-        {
-
-        }
 
         if (Input.GetButtonDown("Jump") && collider.IsTouchingLayers(ground))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpforce);
-            state = State.jumping;
+            Jump();
         }
     }
 
@@ -124,7 +120,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(state == State.hurt)
         {
-            if(Mathf.Abs(rb.velocity.x) < 0)
+            if(Mathf.Abs(rb.velocity.x) > .1f)
             {
                 state = State.idle;
             }
@@ -138,6 +134,13 @@ public class PlayerController : MonoBehaviour
             state = State.idle;
         }
 
+    }
+
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+        state = State.jumping;
     }
 
 }
