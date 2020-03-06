@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(state == State.hurt)
         {
-            if(Mathf.Abs(rb.velocity.x) > .1f)
+            if(Mathf.Abs(rb.velocity.x) < .1f)
             {
                 state = State.idle;
             }
