@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     //[SerializeField]  
     private Animator anim;
-    private enum State {idle, running, jumping, falling, crouching, hurt}
+    private enum State {idle, running, jumping, falling, hurt, crouching}
     private State state = State.idle;
     private Collider2D collider;
     [SerializeField] private LayerMask ground;
@@ -55,9 +55,11 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy" )
         {
+            Frog frog = collision.gameObject.GetComponent<Frog>();
+
             if(state == State.falling)
             {
-                Destroy(collision.gameObject);
+                frog.DeadAnim();
                 Jump();
             }
             else
