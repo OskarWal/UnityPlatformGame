@@ -55,11 +55,11 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy" )
         {
-            Frog frog = collision.gameObject.GetComponent<Frog>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             if(state == State.falling)
             {
-                frog.DeadAnim();
+                enemy.DeadAnim();
                 Jump();
             }
             else
