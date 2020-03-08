@@ -1,159 +1,9 @@
 fileFormatVersion: 2
 guid: f7187675ec12e4aacaeb0e97ad31230a
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -8667466294985060184
-    second: tree_0
-  - first:
-      213: 5281997702118322174
-    second: tree_1
-  - first:
-      213: -3105659087322419395
-    second: tree_2
-  - first:
-      213: -25497680464327838
-    second: tree_3
-  - first:
-      213: -2187617102101193605
-    second: tree_4
-  - first:
-      213: 6962057269733102035
-    second: tree_5
-  - first:
-      213: -3386072866006247602
-    second: tree_6
-  - first:
-      213: 2374228815192248797
-    second: tree_7
-  - first:
-      213: -1328196128117911941
-    second: tree_8
-  - first:
-      213: 6399430291284773974
-    second: tree_9
-  - first:
-      213: 7003882221379653708
-    second: tree_10
-  - first:
-      213: 194759427804239468
-    second: tree_11
-  - first:
-      213: 5332751900989755886
-    second: tree_12
-  - first:
-      213: -2964489705624308281
-    second: tree_13
-  - first:
-      213: -419548402195774346
-    second: tree_14
-  - first:
-      213: -8581346138163503105
-    second: tree_15
-  - first:
-      213: 3677311666092050651
-    second: tree_16
-  - first:
-      213: -1843109872194215613
-    second: tree_17
-  - first:
-      213: 3994245996773873128
-    second: tree_18
-  - first:
-      213: -3704809093847223717
-    second: tree_19
-  - first:
-      213: 5472584832740133722
-    second: tree_20
-  - first:
-      213: -2539089206249953368
-    second: tree_21
-  - first:
-      213: -3162785362237366266
-    second: tree_22
-  - first:
-      213: -637112122996732630
-    second: tree_23
-  - first:
-      213: -8717391948033068406
-    second: tree_24
-  - first:
-      213: -7157479827221165309
-    second: tree_0
-  - first:
-      213: -7278711843470343937
-    second: tree_1
-  - first:
-      213: -4804902470952087509
-    second: tree_2
-  - first:
-      213: 660471712903848806
-    second: tree_3
-  - first:
-      213: -6967470558012695465
-    second: tree_4
-  - first:
-      213: 8148857075066766366
-    second: tree_5
-  - first:
-      213: 2993081860968083954
-    second: tree_6
-  - first:
-      213: 4688567014461253889
-    second: tree_7
-  - first:
-      213: -4548422421340119090
-    second: tree_8
-  - first:
-      213: -2328030050706168903
-    second: tree_9
-  - first:
-      213: -8194911876707948711
-    second: tree_10
-  - first:
-      213: -7479748290254496652
-    second: tree_11
-  - first:
-      213: 8220288883907917781
-    second: tree_12
-  - first:
-      213: -6932324717978063244
-    second: tree_13
-  - first:
-      213: 433933923782258670
-    second: tree_14
-  - first:
-      213: 1500317284035744140
-    second: tree_15
-  - first:
-      213: -5776980770775259412
-    second: tree_16
-  - first:
-      213: -4845989537042455800
-    second: tree_17
-  - first:
-      213: 1103999656286151104
-    second: tree_18
-  - first:
-      213: 7653099887673652687
-    second: tree_19
-  - first:
-      213: 5161804820967314159
-    second: tree_20
-  - first:
-      213: -3080858028698783253
-    second: tree_21
-  - first:
-      213: 3946841714429119617
-    second: tree_22
-  - first:
-      213: 5133497530364610882
-    second: tree_23
-  - first:
-      213: 5107504568447206610
-    second: tree_24
+  fileIDToRecycleName: {}
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -190,12 +40,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -208,7 +58,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -219,8 +69,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -231,8 +80,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 2
     buildTarget: WebGL
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -243,101 +91,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: tvOS
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Lumin
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: tree_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 105
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30b4573e4068bac90800000000000000
-      internalID: -7157479827221165309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 4f7ca2055a24f704bb9372606be78686
-    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
