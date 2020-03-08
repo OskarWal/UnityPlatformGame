@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody2D rb;
+    public int health;
+    public int maxHealth = 100;
+    public HealthBar healthBar;
     //[SerializeField]  
     private Animator anim;
     private enum State {idle, running, jumping, falling, hurt, crouching}
@@ -23,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        health = maxHealth;
+        healthBar.SetMaxHealth( health );
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
@@ -40,7 +46,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Cherry")
@@ -49,6 +54,19 @@ public class PlayerController : MonoBehaviour
             cherries++;
             showCountCherry.text = cherries.ToString();
         }
+    }
+
+    void damage( int dam ){
+        health -= dam;
+        healthBar.SetHealth( health );
+        if( health == 0 )
+            resetScene();
+    }
+
+    void resetScene(){
+        health = maxHealth;
+        healthBar.SetMaxHealth( health );
+        SceneManager.LoadScene( SceneManager.GetActiveScene().name );
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -64,6 +82,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                damage( 20 );
                 state = State.hurt;
                 if( collision.gameObject.transform.position.x > transform.position.x)
                 {
