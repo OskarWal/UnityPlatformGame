@@ -319,18 +319,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31583cfaaea3fa149bf88559d87fe9a5, type: 3}
---- !u!114 &104527918 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6972476735143613343, guid: 3d86c27f10a9eba40b2663a07c1202c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 6972476735175781297}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &190898894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9020107101524985491, guid: aa2c79a97becb6d4fba03e4363ad5143,
@@ -4155,16 +4143,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5505828941636053294, guid: aa6a8aa835d50684ba5bbcad31afdc11,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: e3280a2a810614749b2b0ab6300dfce0, type: 2}
     - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
         type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 747450198}
-    - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
-        type: 3}
-      propertyPath: showCountCherry
-      value: 
-      objectReference: {fileID: 104527918}
     - target: {fileID: 8796483596615265555, guid: aa6a8aa835d50684ba5bbcad31afdc11,
         type: 3}
       propertyPath: m_LocalPosition.x
