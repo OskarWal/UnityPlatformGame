@@ -288,12 +288,12 @@ PrefabInstance:
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.884552
+      value: -40.79664
       objectReference: {fileID: 0}
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8415667
+      value: 0.8415666
       objectReference: {fileID: 0}
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
@@ -361,12 +361,12 @@ PrefabInstance:
     - target: {fileID: 607588711982596360, guid: 46d740d6a1221ec4a816c1e79f395346,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.52
+      value: -47.12
       objectReference: {fileID: 0}
     - target: {fileID: 607588711982596360, guid: 46d740d6a1221ec4a816c1e79f395346,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 607588711982596360, guid: 46d740d6a1221ec4a816c1e79f395346,
         type: 3}
@@ -417,7 +417,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1601053879}
     - target: {fileID: 607588711982596362, guid: 46d740d6a1221ec4a816c1e79f395346,
         type: 3}
       propertyPath: m_Name
@@ -645,6 +645,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6a8aa835d50684ba5bbcad31afdc11, type: 3}
+--- !u!4 &1601053879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8796483596615265555, guid: aa6a8aa835d50684ba5bbcad31afdc11,
+    type: 3}
+  m_PrefabInstance: {fileID: 1601053878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1692877741 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6972476736625036639, guid: 3d86c27f10a9eba40b2663a07c1202c0,
