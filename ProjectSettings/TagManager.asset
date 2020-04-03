@@ -47,6 +47,9 @@ TagManager:
   - name: Backgr
     uniqueID: 2327298327
     locked: 0
+  - name: Middle
+    uniqueID: 2623909167
+    locked: 0
   - name: Entity
     uniqueID: 459925443
     locked: 0

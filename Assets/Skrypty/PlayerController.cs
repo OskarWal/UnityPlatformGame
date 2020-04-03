@@ -11,11 +11,17 @@ public class PlayerController : MonoBehaviour
     public int health;
     public int maxHealth = 100;
     public HealthBar healthBar;
+    [HideInInspector] public bool canClimb = false;
+    [HideInInspector] public bool bottomLadder = false;
+    [HideInInspector] public bool topLadder = false;
+    public Ladder ladder;
+    private float naturalGravity;
     //[SerializeField]  
     private Animator anim;
-    private enum State {idle, running, jumping, falling, hurt, crouching}
+    private enum State {idle, running, jumping, falling, hurt, crouching, climb}
     private State state = State.idle;
     private Collider2D collider;
+    [SerializeField] float climbSpeed = 3f;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpforce = 10f;
@@ -32,12 +38,17 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         collider = GetComponent<Collider2D>();
+        naturalGravity = rb.gravityScale;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(state != State.hurt)
+        if(state == State.climb)
+        {
+            Climb();
+        }
+        else if(state != State.hurt)
         {
             Movement();
         }        
@@ -104,6 +115,14 @@ public class PlayerController : MonoBehaviour
     {
         float hDirection = Input.GetAxis("Horizontal");
 
+        if(canClimb && Mathf.Abs(Input.GetAxis("Vertical")) > .1f)
+        {
+            state = State.climb;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            transform.position = new Vector3(ladder.transform.position.x, rb.position.y);
+            rb.gravityScale = 0f;
+        }
+
         if (hDirection < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
@@ -124,7 +143,11 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationSwitch()
     {
-        if(state == State.jumping)
+        if(state == State.climb)
+        {
+
+        }
+        else if(state == State.jumping)
         {
             if(rb.velocity.y < 0)
             {
@@ -162,6 +185,40 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, jumpforce);
         state = State.jumping;
+    }
+
+    private void Climb()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            //state = State.climb;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            canClimb = false;
+            rb.gravityScale = naturalGravity;
+            anim.speed = 1f;
+            Jump();
+            return;
+        }
+        float vDirection = Input.GetAxis("Vertical");
+
+        //Climbing up
+        if(vDirection > .1f && !topLadder)
+        {
+            rb.velocity = new Vector2(0f, vDirection * climbSpeed);
+            anim.speed = 1f;
+        }
+        //Climbing Down
+        else if(vDirection < -.1f && !bottomLadder)
+        {
+            rb.velocity = new Vector2(0f, vDirection * climbSpeed);
+            anim.speed = 1f;
+        }
+        //Still
+        else
+        {
+            anim.speed = 0f;
+            rb.velocity = Vector2.zero;
+        }
     }
 
 }
