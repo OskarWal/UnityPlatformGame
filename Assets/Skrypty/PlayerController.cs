@@ -134,6 +134,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
         }
+        else if (collider.IsTouchingLayers(ground))
+        { 
+            rb.velocity = new Vector2(0, rb.velocity.y); 
+        }
 
         if (Input.GetButtonDown("Jump") && collider.IsTouchingLayers(ground))
         {
