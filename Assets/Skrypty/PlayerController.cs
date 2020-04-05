@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private enum State {idle, running, jumping, falling, hurt, crouching, climb}
     private State state = State.idle;
     private Collider2D collider;
+    public GameObject gameOverUI;
     [SerializeField] float climbSpeed = 3f;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 7f;
@@ -70,8 +71,11 @@ public class PlayerController : MonoBehaviour
     void damage( int dam ){
         health -= dam;
         healthBar.SetHealth( health );
-        if( health == 0 )
-            resetScene();
+        if (health == 0)
+        {
+            Time.timeScale = 0f;
+            gameOverUI.SetActive(true);
+        }//resetScene();
     }
 
     void resetScene(){
