@@ -23,13 +23,21 @@ public class PlayerController : MonoBehaviour
     private Collider2D collider;
     public GameObject gameOverUI;
     [SerializeField] float climbSpeed = 3f;
-    [SerializeField] private LayerMask ground;
     [SerializeField] private float speed = 7f;
     [SerializeField] private float jumpforce = 10f;
     [SerializeField] private int cherries = 0;
     [SerializeField] private Text showCountCherry;
     [SerializeField] private float hurtForce = 1f;
 
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    public bool grouned;
+
+    private void FixedUpdate()
+    {
+        grouned = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
 
     // Start is called before the first frame update
     private void Start()
@@ -138,12 +146,13 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
         }
-        else if (collider.IsTouchingLayers(ground))
+        else if (grouned)
         { 
             rb.velocity = new Vector2(0, rb.velocity.y); 
         }
 
-        if (Input.GetButtonDown("Jump") && collider.IsTouchingLayers(ground))
+        //if (Input.GetButtonDown("Jump") && collider.IsTouchingLayers(ground))
+        if (Input.GetButtonDown("Jump") && grouned)
         {
             Jump();
         }
@@ -165,7 +174,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (state == State.falling)
         {
-            if (collider.IsTouchingLayers(ground))
+            if (grouned)
             {
                 state = State.idle;
             }

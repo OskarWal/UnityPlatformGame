@@ -4197,12 +4197,12 @@ PrefabInstance:
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62.005295
+      value: -61.500854
       objectReference: {fileID: 0}
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.598219
+      value: 7.5981126
       objectReference: {fileID: 0}
     - target: {fileID: 7264003449473945392, guid: eaf3761952dfeb9498754f2358c725e1,
         type: 3}
@@ -4418,19 +4418,14 @@ PrefabInstance:
       objectReference: {fileID: 747450198}
     - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
         type: 3}
-      propertyPath: showCountCherry
-      value: 
-      objectReference: {fileID: 104527918}
-    - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
-        type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
-        type: 3}
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 633056422}
+    - target: {fileID: 8796483596615265552, guid: aa6a8aa835d50684ba5bbcad31afdc11,
+        type: 3}
+      propertyPath: showCountCherry
+      value: 
+      objectReference: {fileID: 104527918}
     - target: {fileID: 8796483596615265555, guid: aa6a8aa835d50684ba5bbcad31afdc11,
         type: 3}
       propertyPath: m_LocalPosition.x
