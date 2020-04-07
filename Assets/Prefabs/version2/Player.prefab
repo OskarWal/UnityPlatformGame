@@ -158,9 +158,6 @@ MonoBehaviour:
   ladder: {fileID: 0}
   gameOverUI: {fileID: 0}
   climbSpeed: 3
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
   speed: 5
   jumpforce: 7
   cherries: 0

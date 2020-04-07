@@ -151,7 +151,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y); 
         }
 
-        //if (Input.GetButtonDown("Jump") && collider.IsTouchingLayers(ground))
         if (Input.GetButtonDown("Jump") && grouned)
         {
             Jump();
