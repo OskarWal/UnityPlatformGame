@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float naturalGravity;
     //[SerializeField]  
     private Animator anim;
+    public int level;
     private enum State {idle, running, jumping, falling, hurt, crouching, climb}
     private State state = State.idle;
     private Collider2D collider;
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Time.timeScale = 1f;
+        level = SceneManager.GetActiveScene().buildIndex;
         health = maxHealth;
         healthBar.SetMaxHealth( health );
         rb = GetComponent<Rigidbody2D>();
@@ -64,6 +68,31 @@ public class PlayerController : MonoBehaviour
         AnimationSwitch();
         anim.SetInteger("state", (int)state);
 
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        
+        PlayerData data = SaveSystem.LoadPlayer();
+        SceneManager.LoadScene(data.level);
+        Start();
+        Update();
+        /*
+        level = data.level;
+        health = data.health;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        transform.position = position;
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
