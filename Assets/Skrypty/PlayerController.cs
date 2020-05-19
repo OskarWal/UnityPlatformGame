@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "Cherry")
         {
+            FindObjectOfType<AudioManager>().Play("coin");
             Destroy(collision.gameObject);
             cherries++;
             showCountCherry.text = cherries.ToString();
@@ -129,7 +130,9 @@ public class PlayerController : MonoBehaviour
 
             if(state == State.falling)
             {
+                FindObjectOfType<AudioManager>().Play("damageEnemy");
                 enemy.DeadAnim();
+                Debug.Log("ERRor");
                 Jump();
             }
             else
@@ -228,8 +231,10 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        FindObjectOfType<AudioManager>().Play("jump");
         rb.velocity = new Vector2(rb.velocity.x, jumpforce);
         state = State.jumping;
+
     }
 
     private void Climb()

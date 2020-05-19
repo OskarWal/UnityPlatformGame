@@ -10,14 +10,18 @@ public class Fall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Stop("Theme");
+            FindObjectOfType<AudioManager>().Play("gameOver");
             gameOverUI.SetActive(true);
             Time.timeScale = 0f;
+
         }
     }
     public void Retry()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<AudioManager>().Stop("gameOver");
     }
     public void LoadMenu()
     {
