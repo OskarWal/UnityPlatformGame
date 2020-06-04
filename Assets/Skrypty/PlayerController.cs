@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(state == State.hurt)
         {
-            if(Mathf.Abs(rb.velocity.x) < .1f)
+            if(Mathf.Abs(rb.velocity.x) < .1f || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
                 state = State.idle;
             }
