@@ -104,6 +104,12 @@ public class PlayerController : MonoBehaviour
             cherries++;
             showCountCherry.text = cherries.ToString();
         }
+        else if(collision.tag == "Spike")
+        {
+            damage(health);
+            Time.timeScale = 0f;
+            gameOverUI.SetActive(true);
+        }
     }
 
     void damage( int dam ){
